@@ -1,0 +1,7 @@
+this is probably going to land in master branch
+I need to initialize it so that I can make a different branch
+for some simple git info:
+https://rogerdudler.github.io/git-guide/
+
+for more in depth:
+https://git-scm.com/docs/git-branch
