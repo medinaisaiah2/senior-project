@@ -1,0 +1,2 @@
+need node v 15~
+and python3 v 3.7.5 (or one that is similar - must be able to use numpy, pandas, and matplotlib)
