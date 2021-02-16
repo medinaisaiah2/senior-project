@@ -17,7 +17,7 @@ const UserSchema = new mon.Schema({
     }
 });
 
-UserSchema.methods.authenticate = function(username, password, callback){
+UserSchema.statics.authenticate = function(username, password, callback){
     User.findOne({username: username}, function(err, user){
         if(err){
             console.log('some error ocurred while looking for user');
@@ -28,10 +28,6 @@ UserSchema.methods.authenticate = function(username, password, callback){
             //var thiserror = new Error("username/password combination is incorrect");//username not found
             var thiserror = new Error("username/password combination is incorrect");
             return callback(thiserror)
-        }
-        else{
-            //check-check
-            console.log('unknown error ocurred');
         }
         bcrypt.compare(password, user.password, function(err, result){
             if(result == true){

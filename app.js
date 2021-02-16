@@ -1,6 +1,6 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
-const {User} = require('./model/users');
+const {User} = require('./model/user');
 const app = express();
 const port = 8080;
 
@@ -14,13 +14,16 @@ app.use(bodyParser.urlencoded({
 //mongoose
 const mongoose = require('mongoose');
 dburl = 'mongodb://localhost:27017/saprunner';
-mongoose.connect(dburl);
+mongoose.connect(dburl,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 //we might move this to router
 app.post('/signup', function(req, res){
     var user =  new User({
-        username = req.body.username,
-        password = req.body.password
+        username : req.body.username,
+        password : req.body.password
        
     });
     
@@ -81,3 +84,5 @@ app.listen(port,function(){
     
 }
 );
+//test
+app.use(express.static('test'));
