@@ -1,3 +1,5 @@
 *.zip
 node_modules
 *.txt
+data/*.csv
+data/*.h5
