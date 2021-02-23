@@ -25,11 +25,19 @@ mongoose.connect(dburl,{
 app.listen(port,function(){
     console.log(`Server listening on port ${port}`);
     
-}
-);
+});
+
+//development purposes DOT NOT go into produciton with this settings
+app.use(function(req, res, next){
+    res.setHeader("Access-Control-Allow-Origin","*");
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');//possible need Content-Type
+    res.setHeader('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+    next();
+});
 
 //we might move this to router
 app.post('/signup', function(req, res){
+    console.log(req);
     var user =  new User({
         username : req.body.username,
         password : req.body.password
@@ -51,6 +59,7 @@ app.post('/signup', function(req, res){
 })
 
 app.post('/login',function(req, res){
+    console.log(req);
     username = req.body.username;
     password = req.body.password;
     if(username && password){//if not null
@@ -64,19 +73,20 @@ app.post('/login',function(req, res){
             else{
                 var payload = {
                     user: {
-                        id: user.id
+                        userid: user.id,
+                        username: user.username
                 }
                 };
                 jwt.sign(
                     payload,"randomString",{
-                    expiresIn:3600
+                    expiresIn:"1h"
                 },
                 function(err, token){
                     if(err){
                        console.log(err);
                     }
                     res.status(200).json({
-                        token
+                        token: token
                     });
                 }
                 );
@@ -89,7 +99,7 @@ app.post('/login',function(req, res){
 //})
 
 app.get('/api/runtest',async function(req, res){
-    file2run = hello.py
+    file2run = "/recommender-yfinance.py";
     token = req.query.token;
     try{
         var user = await verifytoken(token);
@@ -113,7 +123,7 @@ app.get('/api/runtest',async function(req, res){
             console.log(textout);
         });
         python.on('close', function(exitcode){
-            console.log('process ended with code ${exitcode}');
+            console.log(`process ended with code ${exitcode}`);
             //toreturn = bigdata.join("")
             res.json({msg: toreturn = bigdata.join("")})
         })
