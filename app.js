@@ -74,18 +74,26 @@ app.post('/login',function(req, res){
                 var payload = {
                     user: {
                         userid: user.id,
-                        username: user.username
+                        username: user.username,
                 }
                 };
                 jwt.sign(
+                    //randomstring should not be in code. maybe make it environment variable
                     payload,"randomString",{
                     expiresIn:"1h"
                 },
                 function(err, token){
                     if(err){
                        console.log(err);
+                       return res.status(401).json({
+                           msg:"Auth failed"
+                       })
                     }
+                    //expires must be in seconds
                     res.status(200).json({
+                        userid: user.id,
+                        username: user.username,
+                        expiresIn:3600,
                         token: token
                     });
                 }
