@@ -1,6 +1,6 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
-const {User} = require('./model/user');
+//const {User} = require('./model/user');
 const app = express();
 const port = 8080;
 
@@ -15,16 +15,17 @@ app.use(bodyParser.urlencoded({
 }));
 
 //mongoose
-const mongoose = require('mongoose');
-dburl = 'mongodb://localhost:27017/saprunner';
-mongoose.connect(dburl,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
-
+//const mongoose = require('mongoose');
+//dburl = 'mongodb://localhost:27017/saprunner';
+//mongoose.connect(dburl,{
+//    useNewUrlParser: true,
+//    useUnifiedTopology: true
+//});
+//test user
+let User;
 app.listen(port,function(){
     console.log(`Server listening on port ${port}`);
-    
+    User = new TestUser("username","password");
 });
 
 //development purposes DOT NOT go into produciton with this settings
@@ -38,12 +39,14 @@ app.use(function(req, res, next){
 //we might move this to router
 app.post('/signup', function(req, res){
     console.log(req);
-    var user =  new User({
-        username : req.body.username,
-        password : req.body.password
-       
-    });
-    
+    //var user =  new User({
+    //    username : req.body.username,
+    //    password : req.body.password 
+    //});
+    var user = {username : req.body.username,
+        password : req.body.password};
+    //user.username = req.body.username;
+    //user.password = req.body.password;
     //save to db //could have also used user.save
     User.create(user, function(err,user){
         if(err){
@@ -53,7 +56,7 @@ app.post('/signup', function(req, res){
         else{
             return res.status(200).json({
                 msg:"sucess"
-            })
+            });
         }
     });
 })
@@ -171,3 +174,47 @@ async function verifytoken(token){
 
 //test
 app.use(express.static('test'));
+//class can be used to test w/o mongo
+class TestUser{
+    constructor(username, password){
+        this.username = username;
+        this.password = password;
+        this.createdOn = Date.now();
+    }
+    authenticate(username, password, callback) {
+        var err = "";
+        var user = "";
+        if(this.username == username){
+            if(this.password == password){
+                if(typeof callback == "function"){
+                    user = {username:this.username, password: this.password, createdOn:this.createdOn}
+                    return callback(err,user);
+                }
+            }
+            else{
+                err = "we have error authenticating";
+                return callback(err,user);
+            }
+        }
+        else{
+            err = "we have error authenticating";
+            return callback(err,user);
+        }
+    }
+    create(user, callback){
+        var err;//maybe make a case where we find err
+        //use this for checking username entered is the same as our object
+        //if(user.username == this.username && user.password == this.password){
+        //    if(typeof callback == "function"){
+        //        return callback(err, user);
+        //    }
+        //}
+        //use this to change our object's username and password
+        this.username = user.username;
+        this.password = user.password;
+        if(typeof callback == "function"){
+            return callback(err, user);
+        }
+        
+    }
+}
