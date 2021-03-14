@@ -81,7 +81,7 @@ app.post('/login',function(req, res){
                 }
                 };
                 jwt.sign(
-                    //randomstring should not be in code. maybe make it environment variable
+                    //randomstring should not be in code. maybe make it environment variable will use this for now but will changed for prod
                     payload,"randomString",{
                     expiresIn:"1h"
                 },
@@ -161,15 +161,28 @@ app.get('/api/runtest',async function(req, res){
     }
 }) 
 
-async function verifytoken(token){
+app.get('/test/api/testapi',checkauth,function(req,res){
+    res.status(200).json(
+        {msg: "sucessfully used api"}
+    );
+    console.log(res.locals.user);
+})
+
+//exports.checkauth = 
+function checkauth(req, res, next){
     var user;
+    //checking my values will need to delete 
+    //console.log(req.headers.authorization);
+    //const token = req.headers.authorization.split(" ")[1];
+    //console.log(token);
     try{
-        const decode = jwt.verify(token, "randomstring");
+        const decoded = jwt.verify(token, "randomString");
         user = decoded.user;
     } catch(e){
         console.log(e);
     }
-    return user;
+    res.locals.user = user;
+    next();
 }
 
 //test
