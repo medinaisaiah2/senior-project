@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            use this to test our api
+        </title>
+    </head>
+    <body>
+    <div id="container">
+    <div id="inputs">
+        <form>
+        <p>enter the token here:</p>
+        <input type="text" id="tokeninput" name="token" size="150">
+        <br>
+        <p>enter the url here</p>
+        <label for="urlstring">http://localhost/</label>
+        <input type="text" id="urlstring" name="urlstring" size="50">
+        <button type="button" onclick="sendrequest()">Send!</button>
+        <br><br>
+        <label for="datatosend">data</label>
+        <input type="text" id="datatotsend" name="datatosend" size="50">
+        </form>
+        <script type="text/javascript">
+        function sendrequest(){
+            var urltouse = document.getElementById("urlstring").value;
+            var tokentosend = document.getElementById("tokeninput").value;
+            console.log(urltouse);
+            console.log(tokentosend);
+            tokentosend = 'bearer ' + tokentosend;
+            console.log(tokentosend);
+            $.ajax({
+                url:'/test/api/testapi',
+                headers: {'authorization': tokentosend},
+                type: 'GET',
+                success: function(data){
+                    console.log(data);
+                }
+                
+            });
+        }
+        </script>
+        </div>
+    </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+       
+    </body>
+</html>
