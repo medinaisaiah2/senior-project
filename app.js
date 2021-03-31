@@ -4,7 +4,7 @@ const {User} = require('./model/user');
 const app = express();
 const port = 8080;
 
-//to be able to spawn 
+//to be able to spawn child process
 const spawn = require("child_process").spawn;
 
 //get post
@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 //mongoose
+var MongoClient = require('mongodb').MongoClient;
 const mongoose = require('mongoose');
 dburl = 'mongodb://localhost:27017/saprunner';
 mongoose.connect(dburl,{
@@ -84,9 +85,52 @@ app.post('/login',function(req, res){
         });
     }
 })
-//app.get("/", function(req, res){
-//
-//})
+
+
+app.get('/userscripts', async function(req, res){
+    //test will need to get user from token
+    let scriptnames = ['traderaNanLXYCcGB89','traderaNdbKRWEcFU8'];
+    dbname = "saprunner";
+    //build the functions
+    var torun = []
+    for(i = 0; i < scriptnames.length; i++){
+        torun.push(getallfromdoc(scriptnames[i], dbname));
+    }
+    var results = await Promise.all(torun);
+    //console.log(results[0]);
+    //res.redirect('/index');
+    return res.json({msg:results});
+})
+
+function getallfromdoc(collection, dbname){//dbname is almost always saprunner
+    return new Promise(function(resolve, reject){
+        MongoClient.connect(dburl, function(err, client){
+            var dbo = client.db(dbname);
+            dbo.collection(collection).find({},{projection:{"_id":false}}).toArray(function(err, docs){
+                if(err){
+                    return reject(err);
+                }
+                return resolve(docs);
+            });//don't include the id
+            //console.log(res);
+            //resolve(res);
+        });
+    })
+    
+}
+
+exports.getallfromdoc = function (collection, dbname,callback){//dbname is almost always saprunner
+    return new Promise(function(resolve, reject){
+        MongoClient.connect(dburl, function(err, client){
+            var dbo = client.db(dbname);
+            dbo.collection(collection).find({},{"_id":0}).toArray(function(err,docs){
+                console.log(docs);
+                callback(docs);
+            });//don't include the id
+        });
+    })
+    
+}
 
 app.get('/api/runtest',async function(req, res){
     file2run = hello.py
