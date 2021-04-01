@@ -3,3 +3,5 @@ node_modules
 *.txt
 data/*.csv
 data/*.h5
+scripts/
+!scripts/*.py
