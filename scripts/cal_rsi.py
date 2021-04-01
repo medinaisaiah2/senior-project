@@ -1,76 +1,41 @@
 import numpy as np
 import sys
 import pandas as pd
+
 """
 quick info on RSI
 https://blog.quantinsti.com/rsi-indicator/
-https://medium.com/automated-trading/how-to-calculate-and-analyze-relative-strength-index-rsi-using-python-94420d80a364
 """
+
+#https://stackoverflow.com/questions/57006437/calculate-rsi-indicator-from-pandas-dataframe/57037866
+def rma(x, n, y0):
+    a = (n - 1) / n
+    ak = a ** np.arange(len(x) - 1, -1, -1)
+    return np.r_[np.full(n, np.nan), y0, np.cumsum(ak * x) / ak / n + y0 * a ** np.arange(1, len(x) + 1)]
 
 def calculatersi(stock, pricecolumn):
     """a function that will apend RSI to a given dataframe
     pass dataframe as first paremeter and the name of the close or adj close price as second parameter
     :type pricecolumn: str
     """
-    gain = []
-    loss = []
-    avgGain = []
-    avgLoss = []
-    abs_loss = []
-    gain.append(0)
-    loss.append(0)
-    abs_loss.append(0)
-    #print(stock)
-    for i in range(1, len(stock)):
-        if(stock.iloc[i][pricecolumn] - stock.iloc[i-1][pricecolumn] > 0):#positive so it's a gain
-            gain.append(stock.iloc[i][pricecolumn] - stock.iloc[i-1][pricecolumn])
-            loss.append(0)
-            #abs_loss.append(0)
-        else:
-            loss.append(stock.iloc[i][pricecolumn] - stock.iloc[i-1][pricecolumn])
-            #abs_loss.append(abs(stock.iloc[i][pricecolumn] - stock.iloc[i - 1][pricecolumn]))
-            gain.append(0)
+    if not isinstance(stock, pd.DataFrame):
+        print("first parameter is not a dataframe. please try again\n")
+        return -1
+    #df = stock['Adj Close']
+    df = stock[[pricecolumn]].copy()
+    #print(type(stock))
 
+    n=14
 
-    #older stuff might add some back later
-    #print(stock)
-    #print(gain)
-    #print(loss)
-    sumgain = 0
-    sumloss = 0
-    for i in range(0, len(stock)):
-        sumgain += gain[i]
-        sumloss += loss[i]
-        #13 cuz 0-13 make 14 days
-        if i > 13:
-            sumgain -= gain[i-14]
-            sumloss -= loss[i-14]
-            avgGain.append(float(sumgain/14))
-            avgLoss.append(float(abs(sumloss/14)))
-            #check
-            #print(sumgain)
-            #print(sumloss)
-            #print(float(gain[i-14]))
-            #print(float(loss[i-14]))
-        else:
-            avgGain.append(0)
-            avgLoss.append(0)
-    rs = []
-    rsi = []
-    for i in range(0,len(stock)):
-        if i > 13:
-            temp = avgGain[i]/avgLoss[i]
-            rs.append(temp)
-            rsi.append(100-(100/(1+temp)))
-        else:
-            rs.append(0)
-            rsi.append(0)
+    df['change'] = stock[pricecolumn].diff()
+    df['gain'] = df.change.mask(df.change < 0, 0.0)
+    df['loss'] = -df.change.mask(df.change > 0, 0.0)
+    df['avg_gain'] = rma(df.gain[n+1:].to_numpy(), n, np.nansum(df.gain.to_numpy()[:n+1])/n)
+    df['avg_loss'] = rma(df.loss[n+1:].to_numpy(), n, np.nansum(df.loss.to_numpy()[:n+1])/n)
+    df['rs'] = df.avg_gain / df.avg_loss
+    df['rsi'] = 100 - (100/(1+df.rs))
 
-    #stock['Gain'] = pd.Series(np.array(gain), index=stock.index)
-    #stock['Loss'] = pd.Series(np.array(loss), index=stock.index)
-    #stock['Avg Gain'] = pd.Series(np.array(avgGain), index=stock.index)
-    #stock['Avg Loss'] = pd.Series(np.array(avgLoss), index=stock.index)
-    #stock['RS'] = pd.Series(np.array(rs), index=stock.index)
-    stock['RSI'] = pd.Series(np.array(rsi), index=stock.index)
+    stock['rsi'] = df['rsi']
 
+    return 0
 
