@@ -144,11 +144,11 @@ app.get('/api/runtest',async function(req, res){
             console.log(textout);
         });
         python.on('close', function(exitcode){
-            console.log('process ended with code ${exitcode}');
+            console.log(`process ended with code ${exitcode}`);
             //toreturn = bigdata.join("")
             res.json({msg: toreturn = bigdata.join("")})
         })
-        // var mycmd = spawn('python3', [__dirname + "/trial1/" + strat,__dirname + "/trial1/"+stk], {
+        // var mycmd = spawn('python3', [__dirname + "/trial1/" + strat,__dirname + "/trial1/"+stk], {// <- this is necessary for detaching the child
         //     //detached: true,
         //     //shell: true
         //   });
