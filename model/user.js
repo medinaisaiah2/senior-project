@@ -14,7 +14,8 @@ const UserSchema = new mon.Schema({
     createdOn:{
         type:Date,
         default: Date.now()
-    }
+    },
+    favorites:[String]
 });
 
 UserSchema.statics.authenticate = function(username, password, callback){

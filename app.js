@@ -224,4 +224,4 @@ function checkauth(req, res, next){//this uses the header authorization
 }
 
 //test
-app.use(express.static('test'));
+app.use(express.static('dist/trader'));
