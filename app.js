@@ -30,8 +30,7 @@ mongoose.connect(dburl,{
 app.listen(port,function(){
     console.log(`Server listening on port ${port}`);
     
-}
-);
+});
 
 //we might move this to router
 app.post('/signup', function(req, res){
@@ -69,7 +68,8 @@ app.post('/login',function(req, res){
             else{
                 var payload = {
                     user: {
-                        id: user.id
+                        id: user.id,
+                        username: user.username
                 }
                 };
                 jwt.sign(
@@ -92,11 +92,9 @@ app.post('/login',function(req, res){
 
 
 app.get('/userscripts', checkauth, async function(req, res){
-    //test will need to get user from token
     //let scriptnames = ['traderaNanLXYCcGB89','traderaNdbKRWEcFU8'];
-    //let username = 'alex';
+    let username = res.locals.user.username;
     //console.log(username);
-    let username = res.locals.user;
     let query = ({'username':username});
     let scriptnames = await findbyusername('userscripts','saprunner',query);
     console.log(scriptnames);
