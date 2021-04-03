@@ -89,17 +89,25 @@ app.post('/login',function(req, res){
 
 app.get('/userscripts', async function(req, res){
     //test will need to get user from token
-    let scriptnames = ['traderaNanLXYCcGB89','traderaNdbKRWEcFU8'];
+    //let scriptnames = ['traderaNanLXYCcGB89','traderaNdbKRWEcFU8'];
+    let username = 'alex';
+    console.log(username);
+    let query = ({'username':username});
+    let scriptnames = await findbyusername('userscripts','saprunner',query);
+    console.log(scriptnames);
+    console.log(scriptnames.length);
     dbname = "saprunner";
     //build the functions
     var torun = []
     for(i = 0; i < scriptnames.length; i++){
-        torun.push(getallfromdoc(scriptnames[i], dbname));
+        torun.push(getallfromdoc(scriptnames[i]['script'], dbname));
+        console.log(scriptnames[i]['script']);
     }
+    results = 'none';
     var results = await Promise.all(torun);
     //console.log(results[0]);
     //res.redirect('/index');
-    return res.json({msg:results});
+    return res.json(results);//as per Diego changed from msg:result to just result
 })
 
 function getallfromdoc(collection, dbname){//dbname is almost always saprunner
@@ -117,6 +125,20 @@ function getallfromdoc(collection, dbname){//dbname is almost always saprunner
         });
     })
     
+}
+
+function findbyusername(collection, dbname, query){
+    return new Promise(function(resolve, reject){
+        MongoClient.connect(dburl, function(err, client){
+            var dbo = client.db(dbname);
+            dbo.collection(collection).find(query,{projection:{"_id": false, "script":1}}).toArray(function(err, res){
+                if(err){
+                    return reject(err);
+                }
+                return resolve(res);
+            })
+        })
+    })
 }
 
 app.get('/api/runtest',async function(req, res){
@@ -172,6 +194,8 @@ app.get('/api/runtest',async function(req, res){
 }) 
 
 async function verifytoken(token){
+    var user = "alex";
+    return user;
     var user;
     try{
         const decode = jwt.verify(token, "randomstring");
