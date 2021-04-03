@@ -1,3 +1,7 @@
+//some global stuff
+let randomstring = "somesuperrandomstringforjwt";
+
+//express imports
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const {User} = require('./model/user');
@@ -69,7 +73,7 @@ app.post('/login',function(req, res){
                 }
                 };
                 jwt.sign(
-                    payload,"randomString",{
+                    payload,randomstring,{
                     expiresIn:3600
                 },
                 function(err, token){
@@ -87,11 +91,12 @@ app.post('/login',function(req, res){
 })
 
 
-app.get('/userscripts', async function(req, res){
+app.get('/userscripts', checkauth, async function(req, res){
     //test will need to get user from token
     //let scriptnames = ['traderaNanLXYCcGB89','traderaNdbKRWEcFU8'];
-    let username = 'alex';
-    console.log(username);
+    //let username = 'alex';
+    //console.log(username);
+    let username = res.locals.user;
     let query = ({'username':username});
     let scriptnames = await findbyusername('userscripts','saprunner',query);
     console.log(scriptnames);
@@ -143,7 +148,7 @@ function findbyusername(collection, dbname, query){
 
 app.get('/api/runtest',async function(req, res){
     file2run = hello.py
-    token = req.query.token;
+    token = req.query.token;//currently using a token in url get
     try{
         var user = await verifytoken(token);
     }catch(e){
@@ -193,17 +198,31 @@ app.get('/api/runtest',async function(req, res){
     }
 }) 
 
-async function verifytoken(token){
-    var user = "alex";
-    return user;
+async function verifytoken(token){//this function is to verify a token that is in a part of get request with no header
     var user;
     try{
-        const decode = jwt.verify(token, "randomstring");
+        const decode = jwt.verify(token, randomstring);
         user = decoded.user;
     } catch(e){
         console.log(e);
     }
     return user;
+}
+
+function checkauth(req, res, next){//this uses the header authorization
+    var user;
+    //checking my values will need to delete 
+    //console.log(req.headers.authorization);
+    const token = req.headers.authorization.split(" ")[1];
+    //console.log(token);
+    try{
+        const decoded = jwt.verify(token, randomstring);
+        user = decoded.user;
+    } catch(e){
+        console.log(e);
+    }
+    res.locals.user = user;
+    next();
 }
 
 //test
