@@ -109,15 +109,24 @@ app.get('/userscripts', checkauth, async function(req, res){
     results = 'none';
     var results = await Promise.all(torun);
     //console.log(results[0]);
+    //console.log(results[1])
+    data = [];
+    for(i = 0; i < results.length; i++){
+        data.push(results[i][0]);
+    }
+    //response.push(results[0][0]);
+    //response.push(results[1][0]);
+    //console.log(response);
     //res.redirect('/index');
-    return res.json(results);//as per Diego changed from msg:result to just result
+    return res.json(data);//as per Diego changed from msg:result to just result
 })
 
 function getallfromdoc(collection, dbname){//dbname is almost always saprunner
     return new Promise(function(resolve, reject){
         MongoClient.connect(dburl, function(err, client){
             var dbo = client.db(dbname);
-            dbo.collection(collection).find({},{projection:{"_id":false}}).toArray(function(err, docs){
+            //dbo.collection(collection).find({},{projection:{"_id":false}}).toArray(function(err, docs){
+                dbo.collection(collection).find({},{projection:{"_id":false}}).sort({"_id":-1}).limit(1).toArray(function(err, docs){
                 if(err){
                     return reject(err);
                 }
