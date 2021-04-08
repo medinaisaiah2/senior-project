@@ -7,7 +7,8 @@ const jwt = require("jsonwebtoken");
 const {User} = require('./model/user');
 const app = express();
 const port = 8080;
-
+const csvtojson = require("csvtojson");
+const fs = require('fs');
 //to be able to spawn child process
 const spawn = require("child_process").spawn;
 
@@ -204,6 +205,25 @@ app.get('/api/runtest',async function(req, res){
         //   });
     }
 }) 
+
+app.get('/api/history', async function(req, res){
+    let ticker = req.query.ticker;
+    ticker = ticker.toUpperCase();
+    //console.log(ticker);
+    let datapath = '/data/';
+    var csvdatapath = __dirname + datapath + ticker + '_data.csv';
+    //access uses a callback
+    fs.access(csvdatapath, fs.constants.F_OK, function(err){
+        if(err){
+            //console.log(err);
+            csvdatapath = __dirname + datapath + "AAPL" + '_data.csv';
+        }
+        csvtojson().fromFile(csvdatapath)
+        .then(function(json){
+            return res.status(200).json(json);
+        });
+    });
+});
 
 async function verifytoken(token){//this function is to verify a token that is in a part of get request with no header
     var user;
