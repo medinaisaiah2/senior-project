@@ -122,6 +122,29 @@ app.get('/userscripts', checkauth, async function(req, res){
     return res.json(data);//as per Diego changed from msg:result to just result
 })
 
+function insertuserscript(collection, dbname, username, scriptname){
+    return new Promise(function(resolve, reject){
+        //prepare to insert
+        let values = {"username":username, "scriptname":scriptname, "status":1};
+        MongoClient.connect(dburl, function(err, client){
+            var dbo = client.db(dbname);
+            if(!dbo){
+                let rejected = "failed to connect";
+                return reject(rejected);
+            }
+            dbo.collection(collection).insertOne(values, function(err, response){
+                if(err){
+                    return resolve(err);
+                }
+                else{
+                    return resolve(true);
+                }
+            })
+            
+        });
+    });
+}
+
 function getallfromdoc(collection, dbname){//dbname is almost always saprunner
     return new Promise(function(resolve, reject){
         MongoClient.connect(dburl, function(err, client){
@@ -154,18 +177,22 @@ function findbyusername(collection, dbname, query){
     })
 }
 
-app.get('/api/runtest',async function(req, res){
-    file2run = hello.py
-    token = req.query.token;//currently using a token in url get
+app.get('/api/runtest', checkauth, async function(req, res){
+    file2run = hello.py;
+    //token = req.query.token;//currently using a token in url get
+/*
     try{
         var user = await verifytoken(token);
     }catch(e){
-        res.send.json({msg:'error in token'});
+        return res.send.json({msg:'error in token'});
     }
-    if(user){
+*/
+    if(!res.locals.user){
         //peform some op
+        return res.json({msg:'error in token'});
     }
     else{
+        let username = res.locals.user.username;
         var bigdata = [];
         var python = spawn('python3', [__dirname + file2run]);
         python.stdout.on('data', function(data){
@@ -182,7 +209,7 @@ app.get('/api/runtest',async function(req, res){
             console.log(`process ended with code ${exitcode}`);
             //toreturn = bigdata.join("")
             res.json({msg: toreturn = bigdata.join("")})
-        })
+        });
         // var mycmd = spawn('python3', [__dirname + "/trial1/" + strat,__dirname + "/trial1/"+stk], {// <- this is necessary for detaching the child
         //     //detached: true,
         //     //shell: true
@@ -203,8 +230,10 @@ app.get('/api/runtest',async function(req, res){
         //   mycmd.on('close',function(data){
         //       console.log(data);
         //   });
+        let scriptname = await makeuniquecoll();
+        let result = await insertuserscript("userscripts","saprunner",username, scriptname);
     }
-}) 
+}); 
 
 app.get('/api/history', async function(req, res){
     let ticker = req.query.ticker;
@@ -232,6 +261,7 @@ async function verifytoken(token){//this function is to verify a token that is i
         user = decoded.user;
     } catch(e){
         console.log(e);
+        return res.json({msg:"error in token"});
     }
     return user;
 }
@@ -252,5 +282,56 @@ function checkauth(req, res, next){//this uses the header authorization
     next();
 }
 
-//test
+//make a new unique name for collection
+//needs to be async because it calls getcollections which returns a promise and it must wait for it before proceeding
+//https://stackoverflow.com/questions/30470415/listing-all-collections-in-a-mongo-database-within-a-nodejs-script
+async function makeuniquecoll(){
+    const length = 12;
+    var myunique = '';
+    var haveunique = false;
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charlength = characters.length;
+    //var currentcollections = await exports.getcollections();
+    var currentcollections = await getcollections();
+    console.log("current in collections");
+    console.log(currentcollections);
+    // var collectionlist = [];
+    // for(var i = 0; i < currentcollections.length; i++){
+    //     collectionlist.push(currentcollections[i]['name']);
+    // }
+    //console.log(collectionlist);
+    do{
+    for(var i = 0; i < length; i++){
+        myunique += characters.charAt(Math.floor(Math.random() * charlength));
+    }
+    //check
+    // if(currentcollections.indexOf("trader")){
+    //     console.log("check check : trader exists");
+    // }
+    //
+    if(currentcollections.indexOf("trader" + myunique)){
+        haveunique = true;
+    }
+    }while(!haveunique);
+    myunique = "trader" + myunique;
+    console.log(myunique);
+    return myunique;
+}
+
+//get list of collections
+function getcollections() {
+    return new Promise(function(res,rej){
+        MongoClient.connect("mongodb://localhost:27017",function(err, client){
+            //var dbo = client.db(dbname);
+            var dbo = client.db("saprunner");
+            dbo.listCollections({},{nameOnly:true}).toArray(function (err, collectionInfo){
+                console.log(collectionInfo);
+                res(collectionInfo);
+            });
+            
+    })
+    });
+}
+
+//server frontend
 app.use(express.static('dist/trader'));

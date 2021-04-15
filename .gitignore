@@ -5,3 +5,4 @@ data/*.csv
 data/*.h5
 scripts/
 !scripts/*.py
+scripts/myconfig.py
