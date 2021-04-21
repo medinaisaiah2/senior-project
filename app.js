@@ -109,8 +109,8 @@ app.get('/userscripts', checkauth, async function(req, res){
     }
     results = 'none';
     var results = await Promise.all(torun);
-    //console.log(results[0]);
-    //console.log(results[1])
+    console.log(results[0]);
+    console.log(results[1])
     data = [];
     for(i = 0; i < results.length; i++){
         data.push(results[i][0]);
@@ -149,8 +149,8 @@ function getallfromdoc(collection, dbname){//dbname is almost always saprunner
     return new Promise(function(resolve, reject){
         MongoClient.connect(dburl, function(err, client){
             var dbo = client.db(dbname);
-            //dbo.collection(collection).find({},{projection:{"_id":false}}).toArray(function(err, docs){
-                dbo.collection(collection).find({},{projection:{"_id":false}}).sort({"_id":-1}).limit(1).toArray(function(err, docs){
+            dbo.collection(collection).find({},{projection:{"_id":false}}).toArray(function(err, docs){
+                //dbo.collection(collection).find({},{projection:{"_id":false}}).sort({"_id":-1}).limit(1).toArray(function(err, docs){
                 if(err){
                     return reject(err);
                 }
@@ -177,8 +177,9 @@ function findbyusername(collection, dbname, query){
     })
 }
 
-app.get('/api/runtest', checkauth, async function(req, res){
-    file2run = hello.py;
+//app.get('/api/runtest', checkauth, async function(req, res){
+app.get('/api/runstrategy', checkauth, async function(req, res){
+    //file2run = hello.py;
     //token = req.query.token;//currently using a token in url get
 /*
     try{
@@ -193,6 +194,13 @@ app.get('/api/runtest', checkauth, async function(req, res){
     }
     else{
         let username = res.locals.user.username;
+        var strategy = req.query.strategy;
+        if(!strategy){
+            strategy = 'trade_std';
+        }
+        strategy = strategy + '.py';
+        //test
+        /*
         var bigdata = [];
         var python = spawn('python3', [__dirname + file2run]);
         python.stdout.on('data', function(data){
@@ -210,28 +218,36 @@ app.get('/api/runtest', checkauth, async function(req, res){
             //toreturn = bigdata.join("")
             res.json({msg: toreturn = bigdata.join("")})
         });
-        // var mycmd = spawn('python3', [__dirname + "/trial1/" + strat,__dirname + "/trial1/"+stk], {// <- this is necessary for detaching the child
-        //     //detached: true,
-        //     //shell: true
-        //   });
-        //   //mycmd.unref();
-        //   //error checking
-        //   mycmd.stdout.on('data',function(data){
-        //       console.log("on stdout");
-        //       console.log(data);
-        //   })
-        //   mycmd.stderr.on('data',function(data){
-        //       console.log("on stderr");
-        //       console.log(data);
-        //       console.log("error given");
-        //       var textout = data.toString('utf8');
-        //       console.log(textout);
-        //   });
-        //   mycmd.on('close',function(data){
-        //       console.log(data);
-        //   });
-        let scriptname = await makeuniquecoll();
-        let result = await insertuserscript("userscripts","saprunner",username, scriptname);
+        */
+        //var mycmd = spawn('python3', [__dirname + "/scripts/" + strat,__dirname + "/trial1/"+stk, ], {// <- this is necessary for detaching the child
+        //    detached: true,
+        //    shell: true
+        //});
+        let uniquecolname = await makeuniquecoll();
+        var mycmd = spawn('python3', [__dirname + "/scripts/" + strategy, stk, uniquecolname, moneyallocation, 'true'], {// <- this is necessary for detaching the child
+            detached: true,
+            shell: true
+          });
+        let result = await insertuserscript("userscripts","saprunner",username, uniquecolname);
+        mycmd.unref();
+        //error checking
+        mycmd.stdout.on('data',function(data){
+            //console.log"on stdout");
+            console.logpython(data);
+        })
+        mycmd.stderr.on('data',function(data){
+            console.logpython("on stderr");
+            console.logpython(data);
+            console.logpython("error given");
+            var textout = data.toString('utf8');
+            console.logpython(textout);
+        });
+        mycmd.on('close',function(data){
+            console.logpython(data);
+        });
+
+        
+        //let result = await insertuserscript("userscripts","saprunner",username, uniquecolname);
     }
 }); 
 
@@ -246,6 +262,21 @@ app.get('/api/history', async function(req, res){
         if(err){
             //console.log(err);
             csvdatapath = __dirname + datapath + "AAPL" + '_data.csv';
+        }
+        csvtojson().fromFile(csvdatapath)
+        .then(function(json){
+            return res.status(200).json(json);
+        });
+    });
+});
+
+app.get('/api/get/recommendations', async function(req, res){
+    var csvdatapath = __dirname + '/recommendations.csv';
+    //access uses a callback
+    fs.access(csvdatapath, fs.constants.F_OK, function(err){
+        if(err){
+            //console.log(err);
+            //csvdatapath = __dirname + datapath + "AAPL" + '_data.csv';
         }
         csvtojson().fromFile(csvdatapath)
         .then(function(json){
@@ -333,5 +364,13 @@ function getcollections() {
     });
 }
 
+//log python 
+console.logpython = function(data){
+    fs.writeFile('mypython.log', data, 'utf8');
+}
+
 //server frontend
 app.use(express.static('dist/trader'));
+//app.get("/dist*",function(req, res){
+    //res.redirect("/index.html");
+//})
