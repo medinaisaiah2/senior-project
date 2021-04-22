@@ -1,8 +1,8 @@
 # Create your own personal trading strategy to trade with
 import pandas as pd
 
-import robin_stocks.helper as helper
-import robin_stocks.urls as urls
+import robin_stocks.robinhood.helper as helper
+import robin_stocks.robinhood.urls as urls
 
 class trader():
     def __init__(self, stocks):

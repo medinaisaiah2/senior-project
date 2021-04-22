@@ -24,7 +24,7 @@ Documentation: https://readthedocs.org/projects/robin-stocks/downloads/pdf/lates
 In addition, we use datetime and pandas to handle market open and storing data, respectively.
 
 '''
-import robin_stocks as rh
+import robin_stocks.robinhood as rh
 import datetime as dt
 import time
 import pandas as pd
