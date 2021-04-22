@@ -7,8 +7,12 @@ const jwt = require("jsonwebtoken");
 const {User} = require('./model/user');
 const app = express();
 const port = 8080;
+
+//requires for files
 const csvtojson = require("csvtojson");
 const fs = require('fs');
+const path = require('path');
+
 //to be able to spawn child process
 const spawn = require("child_process").spawn;
 
@@ -113,7 +117,39 @@ app.get('/userscripts', checkauth, async function(req, res){
     console.log(results[1])
     data = [];
     for(i = 0; i < results.length; i++){
-        data.push(results[i][0]);
+        data.push(results[i]);
+    }
+    //response.push(results[0][0]);
+    //response.push(results[1][0]);
+    //console.log(response);
+    //res.redirect('/index');
+    return res.json(data);//as per Diego changed from msg:result to just result
+})
+
+app.get('/api/test/userscripts', async function(req, res){
+    //let scriptnames = ['traderaNanLXYCcGB89','traderaNdbKRWEcFU8'];
+    //let username = res.locals.user.username;
+    let username = 'alex';
+    //console.log(username);
+    let query = ({'username':username});
+    let scriptnames = await findbyusername('userscripts','saprunner',query);
+    console.log(scriptnames);
+    console.log(scriptnames.length);
+    dbname = "saprunner";
+    //build the functions
+    var torun = []
+    for(i = 0; i < scriptnames.length; i++){
+        torun.push(getallfromdoc(scriptnames[i]['script'], dbname));
+        console.log(scriptnames[i]['script']);
+    }
+    results = 'none';
+    var results = await Promise.all(torun);
+    console.log(results[0]);
+    console.log(results[1])
+    data = [];
+    for(i = 0; i < results.length; i++){
+        //data.push(results[i][0]);
+        data.push(results[i]);
     }
     //response.push(results[0][0]);
     //response.push(results[1][0]);
@@ -178,7 +214,8 @@ function findbyusername(collection, dbname, query){
 }
 
 //app.get('/api/runtest', checkauth, async function(req, res){
-app.get('/api/runstrategy', checkauth, async function(req, res){
+//app.get('/api/runstrategy', checkauth, async function(req, res){
+    app.get('/api/runstrategy', async function(req, res){
     //file2run = hello.py;
     //token = req.query.token;//currently using a token in url get
 /*
@@ -188,17 +225,28 @@ app.get('/api/runstrategy', checkauth, async function(req, res){
         return res.send.json({msg:'error in token'});
     }
 */
-    if(!res.locals.user){
+    if(false){
+    //if(!res.locals.user){
         //peform some op
         return res.json({msg:'error in token'});
     }
     else{
-        let username = res.locals.user.username;
+        //let username = res.locals.user.username;
         var strategy = req.query.strategy;
+        //var ticker = req.query.ticker;
+        //var moneyallocation = req.query.money;
+        var ticker = "AAPL";
+        var moneyallocation = "10000";
         if(!strategy){
             strategy = 'trade_std';
         }
         strategy = strategy + '.py';
+        if(strategy && ticker && moneyallocation){
+            res.status(200).json({mgs:'success'});
+        }
+        else{
+            res.status(200).json({mgs:'something went wrong'});
+        }
         //test
         /*
         var bigdata = [];
@@ -224,26 +272,27 @@ app.get('/api/runstrategy', checkauth, async function(req, res){
         //    shell: true
         //});
         let uniquecolname = await makeuniquecoll();
-        var mycmd = spawn('python3', [__dirname + "/scripts/" + strategy, stk, uniquecolname, moneyallocation, 'true'], {// <- this is necessary for detaching the child
+        console.log(uniquecolname);
+        var mycmd = spawn('python3', [__dirname + "/scripts/" + strategy, ticker, uniquecolname, moneyallocation, 'true'], {// <- this is necessary for detaching the child
             detached: true,
             shell: true
           });
-        let result = await insertuserscript("userscripts","saprunner",username, uniquecolname);
+        //let result = await insertuserscript("userscripts","saprunner",username, uniquecolname);
         mycmd.unref();
         //error checking
         mycmd.stdout.on('data',function(data){
             //console.log"on stdout");
-            console.logpython(data);
+            console.log(data);
         })
         mycmd.stderr.on('data',function(data){
-            console.logpython("on stderr");
-            console.logpython(data);
-            console.logpython("error given");
+            console.log("on stderr");
+            console.log(data);
+            console.log("error given");
             var textout = data.toString('utf8');
-            console.logpython(textout);
+            console.log(textout);
         });
         mycmd.on('close',function(data){
-            console.logpython(data);
+            console.log(data);
         });
 
         
@@ -283,6 +332,30 @@ app.get('/api/get/recommendations', async function(req, res){
             return res.status(200).json(json);
         });
     });
+});
+
+app.get('/api/test/readfiles', async function(req, res){
+    var bigdata = [];
+    const data_dir = path.join(__dirname + '/data'); 
+    fs.readdir(data_dir, function(err, files){
+        if(err){
+            console.log('error ocurred');
+            return res.status(200).json({msg:'not authorized to make this request'});
+        }
+        if(files){
+            files.forEach(function(file){
+                if(file.includes('_data.csv')){
+                    var n = file.indexOf('_data');
+                    var filestr = file.substr(0,n);
+                    bigdata.push(filestr);
+                }
+            });
+            return res.status(200).json(JSON.stringify(bigdata));
+        }
+        else{
+            return res.status(200).json({msg:'not authorized to make this request'});
+        }
+    })
 });
 
 async function verifytoken(token){//this function is to verify a token that is in a part of get request with no header
