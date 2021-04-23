@@ -99,10 +99,10 @@ app.post('/login',function(req, res){
 app.get('/userscripts', checkauth, async function(req, res){
     //let scriptnames = ['traderaNanLXYCcGB89','traderaNdbKRWEcFU8'];
     var username = res.locals.user.username;
-    console.log(res.locals.user);
-    console.log(username);
+    //console.log(res.locals.user);
+    //console.log(username);
     let query = ({'username':username});
-    console.log(query);
+    //console.log(query);
     let scriptnames = await findbyusername('userscripts','saprunner',query);
     //console.log(scriptnames);
     //console.log(scriptnames.length);
@@ -111,12 +111,12 @@ app.get('/userscripts', checkauth, async function(req, res){
     var torun = []
     for(i = 0; i < scriptnames.length; i++){
         torun.push(getallfromdoc(scriptnames[i]['script'], dbname));
-        console.log(scriptnames[i]['script']);
+        //console.log(scriptnames[i]['script']);
     }
     results = 'none';
     var results = await Promise.all(torun);
-    console.log(results[0]);
-    console.log(results[1])
+    //console.log(results[0]);
+    //console.log(results[1])
     data = [];
     for(i = 0; i < results.length; i++){
         data.push(results[i]);
@@ -196,8 +196,8 @@ app.post('/api/runstrategy', checkauth, async function(req, res){
         return res.send.json({msg:'error in token'});
     }
 */
-    if(false){
-    //if(!res.locals.user){
+    //if(false){
+    if(!res.locals.user){
         //peform some op
         return res.json({msg:'error in token'});
     }
@@ -237,57 +237,30 @@ app.post('/api/runstrategy', checkauth, async function(req, res){
         else{
             res.status(200).json({mgs:'something went wrong'});
         }
-        //test
-        /*
-        var bigdata = [];
-        var python = spawn('python3', [__dirname + file2run]);
-        python.stdout.on('data', function(data){
-            bigdata.push(data);
-        })
-        python.stderr.on('data',function(data){
-            console.log("on stderr");
-            console.log(data);
-            console.log("error given");
-            var textout = data.toString('utf8');
-            console.log(textout);
-        });
-        python.on('close', function(exitcode){
-            console.log(`process ended with code ${exitcode}`);
-            //toreturn = bigdata.join("")
-            res.json({msg: toreturn = bigdata.join("")})
-        });
-        */
-        //var mycmd = spawn('python3', [__dirname + "/scripts/" + strat,__dirname + "/trial1/"+stk, ], {// <- this is necessary for detaching the child
-        //    detached: true,
-        //    shell: true
-        //});
+
         let uniquecolname = await makeuniquecoll();
-        console.log(uniquecolname);
+        let result = await insertuserscript("userscripts","saprunner",username, uniquecolname);
+        //console.log(uniquecolname);
         var mycmd = spawn('python3', [__dirname + "/scripts/" + strategy, ticker, uniquecolname, moneyallocation, backtest], {// <- this is necessary for detaching the child
             detached: true,
             shell: true
           });
-        //let result = await insertuserscript("userscripts","saprunner",username, uniquecolname);
         mycmd.unref();
         //error checking
         mycmd.stdout.on('data',function(data){
             //console.log"on stdout");
-            console.log(data);
+            //console.log(data);
         })
         mycmd.stderr.on('data',function(data){
-            console.log("on stderr");
-            console.log(data);
-            console.log("error given");
-            var textout = data.toString('utf8');
-            console.log(textout);
+            //console.log("on stderr");
+            //console.log(data);
+            //console.log("error given");
+            //var textout = data.toString('utf8');
+            //console.log(textout);
         });
         mycmd.on('close',function(data){
             console.log(data);
         });
-
-        console.log(username);
-        console.log(uniquecolname);
-        let result = await insertuserscript("userscripts","saprunner",username, uniquecolname);
     }
 }); 
 
@@ -315,8 +288,7 @@ app.get('/api/get/recommendations', async function(req, res){
     //access uses a callback
     fs.access(csvdatapath, fs.constants.F_OK, function(err){
         if(err){
-            //console.log(err);
-            //csvdatapath = __dirname + datapath + "AAPL" + '_data.csv';
+            console.log(err);
         }
         csvtojson().fromFile(csvdatapath)
         .then(function(json){
@@ -333,7 +305,9 @@ app.get('/api/data/tickerlist', async function(req, res){
             console.log('error ocurred');
             return res.status(200).json({msg:'not authorized to make this request'});
         }
+        //read the data and send it as json
         if(files){
+            //build the data to send
             files.forEach(function(file){
                 if(file.includes('_data.csv')){
                     var n = file.indexOf('_data');
@@ -366,15 +340,15 @@ function checkauth(req, res, next){//this uses the header authorization
     //checking my values will need to delete 
     //console.log(req.headers.authorization);
     const token = req.headers.authorization.split(" ")[1];
-    console.log(token);
+    //console.log(token);
     try{
         const decoded = jwt.verify(token, randomstring);
         user = decoded.user;
     } catch(e){
         console.log(e);
     }
-    console.log("inside checkauth")
-    console.log(user);
+    //console.log("inside checkauth")
+    //console.log(user);
     res.locals.user = user;
     next();
 }
