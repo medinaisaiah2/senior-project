@@ -98,12 +98,14 @@ app.post('/login',function(req, res){
 
 app.get('/userscripts', checkauth, async function(req, res){
     //let scriptnames = ['traderaNanLXYCcGB89','traderaNdbKRWEcFU8'];
-    let username = res.locals.user.username;
-    //console.log(username);
+    var username = res.locals.user.username;
+    console.log(res.locals.user);
+    console.log(username);
     let query = ({'username':username});
+    console.log(query);
     let scriptnames = await findbyusername('userscripts','saprunner',query);
-    console.log(scriptnames);
-    console.log(scriptnames.length);
+    //console.log(scriptnames);
+    //console.log(scriptnames.length);
     dbname = "saprunner";
     //build the functions
     var torun = []
@@ -117,38 +119,6 @@ app.get('/userscripts', checkauth, async function(req, res){
     console.log(results[1])
     data = [];
     for(i = 0; i < results.length; i++){
-        data.push(results[i]);
-    }
-    //response.push(results[0][0]);
-    //response.push(results[1][0]);
-    //console.log(response);
-    //res.redirect('/index');
-    return res.json(data);//as per Diego changed from msg:result to just result
-})
-
-app.get('/api/test/userscripts', async function(req, res){
-    //let scriptnames = ['traderaNanLXYCcGB89','traderaNdbKRWEcFU8'];
-    //let username = res.locals.user.username;
-    let username = 'alex';
-    //console.log(username);
-    let query = ({'username':username});
-    let scriptnames = await findbyusername('userscripts','saprunner',query);
-    console.log(scriptnames);
-    console.log(scriptnames.length);
-    dbname = "saprunner";
-    //build the functions
-    var torun = []
-    for(i = 0; i < scriptnames.length; i++){
-        torun.push(getallfromdoc(scriptnames[i]['script'], dbname));
-        console.log(scriptnames[i]['script']);
-    }
-    results = 'none';
-    var results = await Promise.all(torun);
-    console.log(results[0]);
-    console.log(results[1])
-    data = [];
-    for(i = 0; i < results.length; i++){
-        //data.push(results[i][0]);
         data.push(results[i]);
     }
     //response.push(results[0][0]);
@@ -161,7 +131,7 @@ app.get('/api/test/userscripts', async function(req, res){
 function insertuserscript(collection, dbname, username, scriptname){
     return new Promise(function(resolve, reject){
         //prepare to insert
-        let values = {"username":username, "scriptname":scriptname, "status":1};
+        let values = {"username":username, "script":scriptname, "status":1};
         MongoClient.connect(dburl, function(err, client){
             var dbo = client.db(dbname);
             if(!dbo){
@@ -215,7 +185,8 @@ function findbyusername(collection, dbname, query){
 
 //app.get('/api/runtest', checkauth, async function(req, res){
 //app.get('/api/runstrategy', checkauth, async function(req, res){
-    app.get('/api/runstrategy', async function(req, res){
+//    app.get('/api/runstrategy', async function(req, res){
+app.post('/api/runstrategy', checkauth, async function(req, res){
     //file2run = hello.py;
     //token = req.query.token;//currently using a token in url get
 /*
@@ -231,15 +202,34 @@ function findbyusername(collection, dbname, query){
         return res.json({msg:'error in token'});
     }
     else{
-        //let username = res.locals.user.username;
-        var strategy = req.query.strategy;
-        //var ticker = req.query.ticker;
-        //var moneyallocation = req.query.money;
-        var ticker = "AAPL";
-        var moneyallocation = "10000";
+        var username = res.locals.user.username;
+        var strategy = req.body.strategy;
+        var ticker = req.body.ticker;
+        var moneyallocation = req.body.moneyallocation;
+        var bbacktest = req.body.backtest;
+        var backtest = 'false';
+        if(bbacktest == true){//should be a string | this is just to be sure
+            backtest = 'true';
+        }
+        //test
+        /*
+        console.log(req.body.strategy);
+        console.log(req.body.ticker);
+        console.log(req.body.moneyallocation);
+        console.log(req.body.backtest);
+        var bbacktest = req.body.backtest;
+        if(bbacktest == false){
+            console.log("it is false");
+        }
+        if(bbacktest == true){
+            console.log("it is true");
+        }
+        return res.status(200).json("success");
+        */
         if(!strategy){
             strategy = 'trade_std';
         }
+        strategy = 'trade_std';
         strategy = strategy + '.py';
         if(strategy && ticker && moneyallocation){
             res.status(200).json({mgs:'success'});
@@ -273,7 +263,7 @@ function findbyusername(collection, dbname, query){
         //});
         let uniquecolname = await makeuniquecoll();
         console.log(uniquecolname);
-        var mycmd = spawn('python3', [__dirname + "/scripts/" + strategy, ticker, uniquecolname, moneyallocation, 'true'], {// <- this is necessary for detaching the child
+        var mycmd = spawn('python3', [__dirname + "/scripts/" + strategy, ticker, uniquecolname, moneyallocation, backtest], {// <- this is necessary for detaching the child
             detached: true,
             shell: true
           });
@@ -295,8 +285,9 @@ function findbyusername(collection, dbname, query){
             console.log(data);
         });
 
-        
-        //let result = await insertuserscript("userscripts","saprunner",username, uniquecolname);
+        console.log(username);
+        console.log(uniquecolname);
+        let result = await insertuserscript("userscripts","saprunner",username, uniquecolname);
     }
 }); 
 
@@ -334,7 +325,7 @@ app.get('/api/get/recommendations', async function(req, res){
     });
 });
 
-app.get('/api/test/readfiles', async function(req, res){
+app.get('/api/data/tickerlist', async function(req, res){
     var bigdata = [];
     const data_dir = path.join(__dirname + '/data'); 
     fs.readdir(data_dir, function(err, files){
@@ -350,7 +341,7 @@ app.get('/api/test/readfiles', async function(req, res){
                     bigdata.push(filestr);
                 }
             });
-            return res.status(200).json(JSON.stringify(bigdata));
+            return res.status(200).json(bigdata);
         }
         else{
             return res.status(200).json({msg:'not authorized to make this request'});
@@ -375,13 +366,15 @@ function checkauth(req, res, next){//this uses the header authorization
     //checking my values will need to delete 
     //console.log(req.headers.authorization);
     const token = req.headers.authorization.split(" ")[1];
-    //console.log(token);
+    console.log(token);
     try{
         const decoded = jwt.verify(token, randomstring);
         user = decoded.user;
     } catch(e){
         console.log(e);
     }
+    console.log("inside checkauth")
+    console.log(user);
     res.locals.user = user;
     next();
 }
@@ -418,7 +411,7 @@ async function makeuniquecoll(){
     }
     }while(!haveunique);
     myunique = "trader" + myunique;
-    console.log(myunique);
+    //console.log(myunique);
     return myunique;
 }
 
@@ -443,7 +436,7 @@ console.logpython = function(data){
 }
 
 //server frontend
-app.use(express.static('dist/trader'));
-//app.get("/dist*",function(req, res){
-    //res.redirect("/index.html");
-//})
+app.use(express.static('dist/trader/'));
+app.get("/*",function(req, res){
+    res.redirect("/index.html");
+})
