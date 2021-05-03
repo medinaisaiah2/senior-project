@@ -187,18 +187,7 @@ function findbyusername(collection, dbname, query){
 //app.get('/api/runstrategy', checkauth, async function(req, res){
 //    app.get('/api/runstrategy', async function(req, res){
 app.post('/api/runstrategy', checkauth, async function(req, res){
-    //file2run = hello.py;
-    //token = req.query.token;//currently using a token in url get
-/*
-    try{
-        var user = await verifytoken(token);
-    }catch(e){
-        return res.send.json({msg:'error in token'});
-    }
-*/
-    //if(false){
     if(!res.locals.user){
-        //peform some op
         return res.json({msg:'error in token'});
     }
     else{
@@ -227,9 +216,18 @@ app.post('/api/runstrategy', checkauth, async function(req, res){
         return res.status(200).json("success");
         */
         if(!strategy){
+            strategy = 'std';
+        }
+        var frontendstrategies = ['std','RSI','MACD','Support-resistance'];
+        var maptobackend = ['trade_std','trade_rsi','trade_macd','trade_sr'];
+        let indexofstrategy = frontendstrategies.indexOf(strategy);
+        if(indexofstrategy < 0){
             strategy = 'trade_std';
         }
-        strategy = 'trade_std';
+        else{
+            strategy = maptobackend[indexofstrategy];
+        }
+        //strategy = 'trade_std';
         strategy = strategy + '.py';
         if(strategy && ticker && moneyallocation){
             res.status(200).json({mgs:'success'});
@@ -237,7 +235,7 @@ app.post('/api/runstrategy', checkauth, async function(req, res){
         else{
             res.status(200).json({mgs:'something went wrong'});
         }
-
+        //console.log(strategy);
         let uniquecolname = await makeuniquecoll();
         let result = await insertuserscript("userscripts","saprunner",username, uniquecolname);
         //console.log(uniquecolname);
