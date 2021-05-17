@@ -1,0 +1,35 @@
+ 
+.container-fluid {
+  padding: 1rem;
+
+}
+#transactions{
+  padding: 1rem;
+  /* border: 2px solid rgb(0, 0, 0); */
+  color:rgb(0, 0, 0);
+  text-align: center;
+}
+#welcome{
+  padding: 1rem;
+  /* border: 2px solid rgb(0, 0, 0); */
+  color:rgb(5, 5, 5);
+  text-align: center;
+}
+#stock{
+  padding: 1rem;
+  /* border: 2px solid rgb(0, 0, 0); */
+  color:rgb(0, 0, 0);
+  text-align: center;
+}
+#graphs{
+  padding: 1rem;
+  /* border: 2px solid rgb(0, 0, 0); */
+  color:rgb(0, 0, 0);
+  text-align: center;
+} 
+table {
+  width: 100%;
+}
+th{
+  position: center;
+}

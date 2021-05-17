@@ -1,0 +1,19 @@
+<div id="divChart">
+  <canvas id="myChart"></canvas>
+</div>
+
+
+<div>
+  <h3>{{close_today | number : '.2-2'}} {{percentage}}</h3>
+  <mat-form-field appearance="fill">
+    <mat-label>Select a Stock</mat-label>
+    <mat-select [(ngModel)]="selectedStock">
+      <mat-option *ngFor="let stock of stocks" [value]="stock" (click)="onChartSelected()">
+        {{stock}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p>Open: {{open_today | number : '.2-2'}} <br>
+  High: {{high_today | number : '.2-2'}} <br>
+  Low:{{low_today | number : '.2-2'}} <br>
+</div>

@@ -1,0 +1,148 @@
+<body
+  style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/CSUB_Logo_2.svg/1280px-CSUB_Logo_2.svg.png);">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12" id="welcome">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">Hi User!</div>
+            <p class="card-text">Ready to start trading?</p>
+
+            <br>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Select a Sector</mat-label>
+              <mat-select [(ngModel)]="selectedSector">
+                <mat-option *ngFor="let stock of Sectors" [value]="stock" (click)="onSectorClick()">
+                  {{stock}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <br>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Select a Stock</mat-label>
+              <mat-select [(ngModel)]="selectedStocks">
+                <mat-option *ngFor="let stock of stockSectorArray" [value]="stock">
+                  {{stock}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br>
+
+
+
+            <mat-form-field appearance="fill">
+              <mat-label>Select a Strategy</mat-label>
+              <mat-select [(ngModel)]="strategySelected">
+                <mat-option *ngFor="let stock of strategyArray" [value]="stock">
+                  {{stock}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+              <mat-label>Use Backtesting</mat-label>
+              <mat-select [(ngModel)]="backtesting">
+                <mat-option [value]="true">Yes</mat-option>
+                <mat-option [value]="false">No</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Deposit Amount</mat-label>
+              <input matInput [(ngModel)]="depositAmount">
+            </mat-form-field>
+
+            <!-- <p>
+              Sector Selected: {{selectedSector}}
+              <br>
+              Stock Selected: {{selectedStocks}}
+              <br>
+              Strategy Selected: {{strategySelected}}
+              <br>
+              Amount to Trade: {{depositAmount}}
+              <br>
+            </p> -->
+<br>
+
+            <a href="#" class="btn btn-info btn-lg pull-rigth">Trade</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4" id="stock">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">Porfolio Balance <i class="bi bi-wallet2"></i></div>
+
+            <div class="card-text">
+              <p>User starting Balance : ${{startingBalance}}</p>
+              <p>User current balance : ${{updatedBalance}}</p>
+              <p>User trading balance : ${{updatedBalance}}</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="col-lg-8">
+        <div class="card" id="Recomendations">
+          <div class="card-body">
+            <div class="card-title-center">Recomendations <i class="bi bi-hand-thumbs-up"></i></div>
+            <div class="card-text">
+              <div>
+                <div>
+                  <table mat-table [dataSource]="dataArray">
+                    <ng-container matColumnDef="Company">
+                      <th mat-header-cell *matHeaderCellDef> Company </th>
+                      <td mat-cell *matCellDef="let user"> {{user.Company}} </td>
+                    </ng-container>
+                    <br>
+                    <ng-container matColumnDef="Recomendations">
+                      <th mat-header-cell *matHeaderCellDef> Recomendations </th>
+                      <td mat-cell *matCellDef="let user"> {{user.Recommendations}} </td>
+                    </ng-container>
+                    <br>
+                    <ng-container matColumnDef="Sector">
+                      <th mat-header-cell *matHeaderCellDef> Sector </th>
+                      <td mat-cell *matCellDef="let user"> {{user.Sector}} </td>
+                    </ng-container>
+
+
+
+                    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-12">
+        <div class="card" id="edit">
+          <div class="card-body">
+            <div class="card-title">Transactions</div>
+            <div class="card-text">
+              <app-transactions></app-transactions>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</body>

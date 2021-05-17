@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+ 
+  <span *ngIf="userIsAuthenticated">
+    <a mat-button routerLink="home" routerLinkActive="mat-accnt">Home</a>
+  </span>
+ 
+  <span *ngIf="userIsAuthenticated">
+    <a mat-button routerLink="trading" routerLinkActive="mat-accnt">Trading</a>
+  </span>
+  <span *ngIf="userIsAuthenticated">
+    <a mat-button routerLink="strategy" routerLinkActive="mat-accnt">Strategy</a>
+  </span>
+  <span *ngIf="userIsAuthenticated">
+    <a mat-button routerLink="robinhood" routerLinkActive="mat-accnt">Robinhood</a>
+  </span>
+  <span *ngIf="userIsAuthenticated">
+    <a mat-button routerLink="transactions" routerLinkActive="mat-accnt">Transactions</a>
+  </span>
+  <span *ngIf="!userIsAuthenticated">
+    <a mat-button routerLink="login" routerLinkActive="mat-accnt">Login</a>
+  </span>
+  <span *ngIf="!userIsAuthenticated">
+    <a mat-button routerLink="signup" routerLinkActive="mat-accnt">Signup</a>
+  </span>
+  <span *ngIf="userIsAuthenticated">
+    <button mat-button (click)="onLogout()">Logout</button> 
+  </span>
+</mat-toolbar>

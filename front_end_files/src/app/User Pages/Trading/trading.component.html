@@ -1,0 +1,46 @@
+<body
+  style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/CSUB_Logo_2.svg/1280px-CSUB_Logo_2.svg.png);">
+
+  <div class="container-fluid">
+    <div class="row">
+
+
+      <div class="col-12" id="welcome">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">Hi User!</div>
+            <p class="card-text">Here you can find your favorites and complete Transaction history.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12" id="graphs">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">Favorites <i class="bi bi-hand-thumbs-up"></i></div>
+            <app-stocks></app-stocks>
+            <div class="card-text">
+              <a href="#" class="btn btn-info"> Remove from Favorites</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="card" id="edit">
+          <div class="card-body">
+            <div class="card-title">Transactions</div>
+            <div class="card-text">
+              <app-transactions></app-transactions>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+  </div>
+</body>

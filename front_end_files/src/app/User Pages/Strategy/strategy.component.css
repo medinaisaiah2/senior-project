@@ -1,0 +1,50 @@
+ 
+.container-fluid {
+  padding: 1rem;
+
+}
+
+#welcome{
+  padding: 1rem;
+  color:rgb(5, 5, 5);
+  text-align: center;
+}
+#stock{
+  padding: 1rem;
+  color:rgb(0, 0, 0);
+  text-align: center;
+}
+#graphs{
+  padding: 1rem;
+  color:rgb(0, 0, 0);
+  text-align: center;
+} 
+#Recomendations {
+ 
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+}
+
+
+#edit{
+  text-align: center;
+  height: 60%;
+  width: 100%;
+  margin: auto;
+  position: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  padding: 1rem;
+  
+}
+table {
+  width: 100%;
+}

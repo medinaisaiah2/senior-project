@@ -1,0 +1,2527 @@
+[
+    {
+      "Company": "A",
+      "Recommendations": "1.9",
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "AAL",
+      "Recommendations": 3.5,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "AAP",
+      "Recommendations": 2.2,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "AAPL",
+      "Recommendations": 2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "ABBV",
+      "Recommendations": 2,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "ABC",
+      "Recommendations": 2.3,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "ABMD",
+      "Recommendations": 2.3,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "ABT",
+      "Recommendations": 1.8,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "ACN",
+      "Recommendations": 2.1,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "ADBE",
+      "Recommendations": 1.8,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "ADI",
+      "Recommendations": 1.8,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "ADM",
+      "Recommendations": 1.8,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "ADP",
+      "Recommendations": 2.9,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "ADSK",
+      "Recommendations": 2.1,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "AEE",
+      "Recommendations": 2.1,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "AEP",
+      "Recommendations": 2.3,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "AES",
+      "Recommendations": 2,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "AFL",
+      "Recommendations": 3,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "AIG",
+      "Recommendations": 2.4,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "AIZ",
+      "Recommendations": 1.8,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "AJG",
+      "Recommendations": 2.3,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "AKAM",
+      "Recommendations": 2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "ALB",
+      "Recommendations": 2.7,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "ALGN",
+      "Recommendations": 2.1,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "ALK",
+      "Recommendations": 1.9,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "ALL",
+      "Recommendations": 2.3,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "ALLE",
+      "Recommendations": 2.6,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "ALXN",
+      "Recommendations": 2.9,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "AMAT",
+      "Recommendations": 2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "AMCR",
+      "Recommendations": 2.9,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "AMD",
+      "Recommendations": 2.3,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "AME",
+      "Recommendations": 2.1,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "AMGN",
+      "Recommendations": 2.3,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "AMP",
+      "Recommendations": 1.8,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "AMT",
+      "Recommendations": 1.9,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "AMZN",
+      "Recommendations": 1.7,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "ANET",
+      "Recommendations": 2.3,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "ANSS",
+      "Recommendations": 2.4,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "ANTM",
+      "Recommendations": 1.9,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "AON",
+      "Recommendations": 2.4,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "AOS",
+      "Recommendations": 2.7,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "APA",
+      "Recommendations": 2.4,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "APD",
+      "Recommendations": 2.4,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "APH",
+      "Recommendations": 2.2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "APTV",
+      "Recommendations": 2.2,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "ARE",
+      "Recommendations": 1.6,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "ATO",
+      "Recommendations": 2.4,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "ATVI",
+      "Recommendations": 2,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "AVB",
+      "Recommendations": 2.7,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "AVGO",
+      "Recommendations": 2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "AVY",
+      "Recommendations": 2.1,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "AWK",
+      "Recommendations": 2.2,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "AXP",
+      "Recommendations": 2.5,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "AZO",
+      "Recommendations": 2,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "BA",
+      "Recommendations": 2.6,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "BAC",
+      "Recommendations": 2.2,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "BAX",
+      "Recommendations": 2.1,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "BBY",
+      "Recommendations": 2.5,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "BDX",
+      "Recommendations": 2.1,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "BEN",
+      "Recommendations": 3.2,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "BF.B",
+      "Recommendations": 6,
+      "Sector": "unknown"
+    },
+    {
+      "Company": "BIIB",
+      "Recommendations": 2.7,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "BIO",
+      "Recommendations": 1.5,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "BK",
+      "Recommendations": 2.2,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "BKNG",
+      "Recommendations": 2.6,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "BKR",
+      "Recommendations": 2.1,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "BLK",
+      "Recommendations": 1.9,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "BLL",
+      "Recommendations": 2.3,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "BMY",
+      "Recommendations": 1.8,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "BR",
+      "Recommendations": 2.3,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "BRK.B",
+      "Recommendations": 6,
+      "Sector": "unknown"
+    },
+    {
+      "Company": "BSX",
+      "Recommendations": 1.7,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "BWA",
+      "Recommendations": 2.4,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "BXP",
+      "Recommendations": 2.5,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "C",
+      "Recommendations": 2.1,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "CAG",
+      "Recommendations": 2.4,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "CAH",
+      "Recommendations": 2.4,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "CARR",
+      "Recommendations": 2.1,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "CAT",
+      "Recommendations": 2.6,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "CB",
+      "Recommendations": 2.2,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "CBOE",
+      "Recommendations": 2.6,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "CBRE",
+      "Recommendations": 2.1,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "CCI",
+      "Recommendations": 2.1,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "CCL",
+      "Recommendations": 2.6,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "CDNS",
+      "Recommendations": 2.3,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "CDW",
+      "Recommendations": 2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "CE",
+      "Recommendations": 2.3,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "CERN",
+      "Recommendations": 2.4,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "CF",
+      "Recommendations": 2.3,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "CFG",
+      "Recommendations": 2.1,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "CHD",
+      "Recommendations": 2.6,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "CHRW",
+      "Recommendations": 3,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "CHTR",
+      "Recommendations": 2.2,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "CI",
+      "Recommendations": 1.8,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "CINF",
+      "Recommendations": 3,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "CL",
+      "Recommendations": 2.9,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "CLX",
+      "Recommendations": 2.7,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "CMA",
+      "Recommendations": 3,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "CMCSA",
+      "Recommendations": 2.1,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "CME",
+      "Recommendations": 2.4,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "CMG",
+      "Recommendations": 2.1,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "CMI",
+      "Recommendations": 2.5,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "CMS",
+      "Recommendations": 2.4,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "CNC",
+      "Recommendations": 2,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "CNP",
+      "Recommendations": 2.1,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "COF",
+      "Recommendations": 1.9,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "COG",
+      "Recommendations": 2.4,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "COO",
+      "Recommendations": 2.3,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "COP",
+      "Recommendations": 1.9,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "COST",
+      "Recommendations": 2.1,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "CPB",
+      "Recommendations": 2.9,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "CPRT",
+      "Recommendations": 1.7,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "CRM",
+      "Recommendations": 1.9,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "CSCO",
+      "Recommendations": 2.3,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "CSX",
+      "Recommendations": 2.2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "CTAS",
+      "Recommendations": 2.3,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "CTLT",
+      "Recommendations": 1.7,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "CTSH",
+      "Recommendations": 2.5,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "CTVA",
+      "Recommendations": 2.4,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "CTXS",
+      "Recommendations": 2.4,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "CVS",
+      "Recommendations": 2.1,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "CVX",
+      "Recommendations": 2.3,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "CZR",
+      "Recommendations": 2,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "D",
+      "Recommendations": 2.2,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "DAL",
+      "Recommendations": 2.4,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "DD",
+      "Recommendations": 2.2,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "DE",
+      "Recommendations": 2.1,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "DFS",
+      "Recommendations": 2.3,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "DG",
+      "Recommendations": 1.9,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "DGX",
+      "Recommendations": 2.2,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "DHI",
+      "Recommendations": 1.9,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "DHR",
+      "Recommendations": 1.8,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "DIS",
+      "Recommendations": 2,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "DISCA",
+      "Recommendations": 3,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "DISCK",
+      "Recommendations": 3,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "DISH",
+      "Recommendations": 2.6,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "DLR",
+      "Recommendations": 2.1,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "DLTR",
+      "Recommendations": 2.4,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "DOV",
+      "Recommendations": 2.2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "DOW",
+      "Recommendations": 2.7,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "DPZ",
+      "Recommendations": 2.2,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "DRE",
+      "Recommendations": 2.1,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "DRI",
+      "Recommendations": 2.1,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "DTE",
+      "Recommendations": 2.1,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "DUK",
+      "Recommendations": 2.6,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "DVA",
+      "Recommendations": 2.9,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "DVN",
+      "Recommendations": 1.8,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "DXC",
+      "Recommendations": 2.6,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "DXCM",
+      "Recommendations": 1.7,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "EA",
+      "Recommendations": 2.2,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "EBAY",
+      "Recommendations": 2.4,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "ECL",
+      "Recommendations": 2.6,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "ED",
+      "Recommendations": 3.5,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "EFX",
+      "Recommendations": 2.3,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "EIX",
+      "Recommendations": 2,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "EL",
+      "Recommendations": 2,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "EMN",
+      "Recommendations": 2.1,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "EMR",
+      "Recommendations": 2.2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "ENPH",
+      "Recommendations": 2.2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "EOG",
+      "Recommendations": 2.2,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "EQIX",
+      "Recommendations": 1.8,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "EQR",
+      "Recommendations": 2.9,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "ES",
+      "Recommendations": 2.5,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "ESS",
+      "Recommendations": 2.5,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "ETN",
+      "Recommendations": 2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "ETR",
+      "Recommendations": 2.1,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "ETSY",
+      "Recommendations": 1.8,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "EVRG",
+      "Recommendations": 2,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "EW",
+      "Recommendations": 2.2,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "EXC",
+      "Recommendations": 2.2,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "EXPD",
+      "Recommendations": 3.2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "EXPE",
+      "Recommendations": 2.3,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "EXR",
+      "Recommendations": 2.1,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "F",
+      "Recommendations": 2.7,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "FANG",
+      "Recommendations": 1.9,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "FAST",
+      "Recommendations": 2.8,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "FB",
+      "Recommendations": 1.8,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "FBHS",
+      "Recommendations": 2.5,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "FCX",
+      "Recommendations": 2,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "FDX",
+      "Recommendations": 2.1,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "FE",
+      "Recommendations": 2.5,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "FFIV",
+      "Recommendations": 2.4,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "FIS",
+      "Recommendations": 1.9,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "FISV",
+      "Recommendations": 1.8,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "FITB",
+      "Recommendations": 1.9,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "FLIR",
+      "Recommendations": 3,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "FLT",
+      "Recommendations": 2.1,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "FMC",
+      "Recommendations": 1.8,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "FOX",
+      "Recommendations": 6,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "FOXA",
+      "Recommendations": 2.5,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "FRC",
+      "Recommendations": 2.5,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "FRT",
+      "Recommendations": 3,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "FTNT",
+      "Recommendations": 2.1,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "FTV",
+      "Recommendations": 2.4,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "GD",
+      "Recommendations": 2.6,
+      "Sector": "unknown"
+    },
+    {
+      "Company": "GE",
+      "Recommendations": 2.1,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "GILD",
+      "Recommendations": 2.3,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "GIS",
+      "Recommendations": 2.9,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "GL",
+      "Recommendations": 2.9,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "GLW",
+      "Recommendations": 2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "GM",
+      "Recommendations": 1.8,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "GNRC",
+      "Recommendations": 1.7,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "GOOG",
+      "Recommendations": 1.5,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "GOOGL",
+      "Recommendations": 1.7,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "GPC",
+      "Recommendations": 2.9,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "GPN",
+      "Recommendations": 1.9,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "GPS",
+      "Recommendations": 2.9,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "GRMN",
+      "Recommendations": 2.2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "GS",
+      "Recommendations": 2.2,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "GWW",
+      "Recommendations": 2.6,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "HAL",
+      "Recommendations": 2.5,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "HAS",
+      "Recommendations": 1.9,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "HBAN",
+      "Recommendations": 2.3,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "HBI",
+      "Recommendations": 2.7,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "HCA",
+      "Recommendations": 1.9,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "HD",
+      "Recommendations": 2.1,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "HES",
+      "Recommendations": 2.1,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "HFC",
+      "Recommendations": 2.8,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "HIG",
+      "Recommendations": 2.1,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "HII",
+      "Recommendations": 2.5,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "HLT",
+      "Recommendations": 2.3,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "HOLX",
+      "Recommendations": 1.8,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "HON",
+      "Recommendations": 2.1,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "HPE",
+      "Recommendations": 2.7,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "HPQ",
+      "Recommendations": 2.6,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "HRL",
+      "Recommendations": 3.2,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "HSIC",
+      "Recommendations": 2.5,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "HST",
+      "Recommendations": 2.8,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "HSY",
+      "Recommendations": 2.4,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "HUM",
+      "Recommendations": 2,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "HWM",
+      "Recommendations": 2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "IBM",
+      "Recommendations": 2.6,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "ICE",
+      "Recommendations": 1.8,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "IDXX",
+      "Recommendations": 1.9,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "IEX",
+      "Recommendations": 2.2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "IFF",
+      "Recommendations": 2.1,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "ILMN",
+      "Recommendations": 2.7,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "INCY",
+      "Recommendations": 2.3,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "INFO",
+      "Recommendations": 2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "INTC",
+      "Recommendations": 2.9,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "INTU",
+      "Recommendations": 1.9,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "IP",
+      "Recommendations": 2.5,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "IPG",
+      "Recommendations": 2.3,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "IPGP",
+      "Recommendations": 2.2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "IQV",
+      "Recommendations": 1.8,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "IR",
+      "Recommendations": 2.1,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "IRM",
+      "Recommendations": 2.6,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "ISRG",
+      "Recommendations": 2.4,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "IT",
+      "Recommendations": 2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "ITW",
+      "Recommendations": 2.8,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "IVZ",
+      "Recommendations": 2.9,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "J",
+      "Recommendations": 1.7,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "JBHT",
+      "Recommendations": 2.2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "JCI",
+      "Recommendations": 2.2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "JKHY",
+      "Recommendations": 2.6,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "JNJ",
+      "Recommendations": 1.9,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "JNPR",
+      "Recommendations": 3,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "JPM",
+      "Recommendations": 2.2,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "K",
+      "Recommendations": 2.7,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "KEY",
+      "Recommendations": 2.9,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "KEYS",
+      "Recommendations": 1.8,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "KHC",
+      "Recommendations": 2.7,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "KIM",
+      "Recommendations": 2.3,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "KLAC",
+      "Recommendations": 2.3,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "KMB",
+      "Recommendations": 2.9,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "KMI",
+      "Recommendations": 2.7,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "KMX",
+      "Recommendations": 1.7,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "KO",
+      "Recommendations": 2.1,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "KR",
+      "Recommendations": 2.7,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "KSU",
+      "Recommendations": 2.3,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "L",
+      "Recommendations": 3,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "LB",
+      "Recommendations": 2.5,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "LDOS",
+      "Recommendations": 1.6,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "LEG",
+      "Recommendations": 2.5,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "LEN",
+      "Recommendations": 2.2,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "LH",
+      "Recommendations": 1.8,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "LHX",
+      "Recommendations": 2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "LIN",
+      "Recommendations": 2,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "LKQ",
+      "Recommendations": 1.6,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "LLY",
+      "Recommendations": 2.2,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "LMT",
+      "Recommendations": 2.2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "LNC",
+      "Recommendations": 2.5,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "LNT",
+      "Recommendations": 2,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "LOW",
+      "Recommendations": 1.9,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "LRCX",
+      "Recommendations": 2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "LUMN",
+      "Recommendations": 3.4,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "LUV",
+      "Recommendations": 1.9,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "LVS",
+      "Recommendations": 2.1,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "LW",
+      "Recommendations": 2.3,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "LYB",
+      "Recommendations": 2.5,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "LYV",
+      "Recommendations": 2.5,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "MA",
+      "Recommendations": 1.8,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "MAA",
+      "Recommendations": 2.6,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "MAR",
+      "Recommendations": 2.5,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "MAS",
+      "Recommendations": 2.4,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "MCD",
+      "Recommendations": 2,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "MCHP",
+      "Recommendations": 2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "MCK",
+      "Recommendations": 1.9,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "MCO",
+      "Recommendations": 2.1,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "MDLZ",
+      "Recommendations": 1.8,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "MDT",
+      "Recommendations": 1.9,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "MET",
+      "Recommendations": 2,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "MGM",
+      "Recommendations": 2.6,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "MHK",
+      "Recommendations": 2.5,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "MKC",
+      "Recommendations": 3.1,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "MKTX",
+      "Recommendations": 2.7,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "MLM",
+      "Recommendations": 2.4,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "MMC",
+      "Recommendations": 2.8,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "MMM",
+      "Recommendations": 3,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "MNST",
+      "Recommendations": 2.1,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "MO",
+      "Recommendations": 2.1,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "MOS",
+      "Recommendations": 2.2,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "MPC",
+      "Recommendations": 2,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "MPWR",
+      "Recommendations": 1.8,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "MRK",
+      "Recommendations": 2,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "MRO",
+      "Recommendations": 2.6,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "MS",
+      "Recommendations": 2.1,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "MSCI",
+      "Recommendations": 2.3,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "MSFT",
+      "Recommendations": 1.7,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "MSI",
+      "Recommendations": 1.8,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "MTB",
+      "Recommendations": 2.6,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "MTD",
+      "Recommendations": 3.2,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "MU",
+      "Recommendations": 1.9,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "MXIM",
+      "Recommendations": 2.8,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "NCLH",
+      "Recommendations": 2.5,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "NDAQ",
+      "Recommendations": 2.3,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "NEE",
+      "Recommendations": 2,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "NEM",
+      "Recommendations": 2,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "NFLX",
+      "Recommendations": 2.1,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "NI",
+      "Recommendations": 1.9,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "NKE",
+      "Recommendations": 1.8,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "NLOK",
+      "Recommendations": 2.3,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "NLSN",
+      "Recommendations": 2.2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "NOC",
+      "Recommendations": 2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "NOV",
+      "Recommendations": 2.4,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "NOW",
+      "Recommendations": 1.7,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "NRG",
+      "Recommendations": 2.1,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "NSC",
+      "Recommendations": 2.3,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "NTAP",
+      "Recommendations": 2.5,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "NTRS",
+      "Recommendations": 2.9,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "NUE",
+      "Recommendations": 2.5,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "NVDA",
+      "Recommendations": 2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "NVR",
+      "Recommendations": 2.7,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "NWL",
+      "Recommendations": 2.7,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "NWS",
+      "Recommendations": 6,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "NWSA",
+      "Recommendations": 1.9,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "NXPI",
+      "Recommendations": 2.1,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "O",
+      "Recommendations": 2.3,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "ODFL",
+      "Recommendations": 2.4,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "OKE",
+      "Recommendations": 2.8,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "OMC",
+      "Recommendations": 2.8,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "ORCL",
+      "Recommendations": 2.6,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "ORLY",
+      "Recommendations": 2.1,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "OTIS",
+      "Recommendations": 2.2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "OXY",
+      "Recommendations": 2.9,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "PAYC",
+      "Recommendations": 1.8,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "PAYX",
+      "Recommendations": 3,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "PBCT",
+      "Recommendations": 3,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "PCAR",
+      "Recommendations": 2.6,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "PEAK",
+      "Recommendations": 2.3,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "PEG",
+      "Recommendations": 2.3,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "PENN",
+      "Recommendations": 2.4,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "PEP",
+      "Recommendations": 2.3,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "PFE",
+      "Recommendations": 2.6,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "PFG",
+      "Recommendations": 2.7,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "PG",
+      "Recommendations": 2.4,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "PGR",
+      "Recommendations": 2.6,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "PH",
+      "Recommendations": 2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "PHM",
+      "Recommendations": 2.2,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "PKG",
+      "Recommendations": 2.8,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "PKI",
+      "Recommendations": 2.2,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "PLD",
+      "Recommendations": 1.9,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "PM",
+      "Recommendations": 2,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "PNC",
+      "Recommendations": 2.6,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "PNR",
+      "Recommendations": 2.6,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "PNW",
+      "Recommendations": 2.8,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "POOL",
+      "Recommendations": 2.3,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "PPG",
+      "Recommendations": 2.2,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "PPL",
+      "Recommendations": 2.5,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "PRGO",
+      "Recommendations": 2.7,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "PRU",
+      "Recommendations": 2.7,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "PSA",
+      "Recommendations": 2.7,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "PSX",
+      "Recommendations": 1.9,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "PVH",
+      "Recommendations": 2.4,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "PWR",
+      "Recommendations": 1.9,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "PXD",
+      "Recommendations": 1.9,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "PYPL",
+      "Recommendations": 1.8,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "QCOM",
+      "Recommendations": 2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "QRVO",
+      "Recommendations": 2.2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "RCL",
+      "Recommendations": 2.6,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "RE",
+      "Recommendations": 1.9,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "REG",
+      "Recommendations": 2.4,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "REGN",
+      "Recommendations": 2,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "RF",
+      "Recommendations": 2.2,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "RHI",
+      "Recommendations": 2.8,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "RJF",
+      "Recommendations": 2,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "RL",
+      "Recommendations": 2.5,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "RMD",
+      "Recommendations": 2.6,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "ROK",
+      "Recommendations": 2.6,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "ROL",
+      "Recommendations": 2.3,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "ROP",
+      "Recommendations": 2.5,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "ROST",
+      "Recommendations": 1.9,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "RSG",
+      "Recommendations": 2.2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "RTX",
+      "Recommendations": 2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "SBAC",
+      "Recommendations": 1.9,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "SBUX",
+      "Recommendations": 2.2,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "SCHW",
+      "Recommendations": 2.1,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "SEE",
+      "Recommendations": 2.1,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "SHW",
+      "Recommendations": 2.3,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "SIVB",
+      "Recommendations": 2.4,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "SJM",
+      "Recommendations": 3.2,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "SLB",
+      "Recommendations": 2.2,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "SNA",
+      "Recommendations": 2.7,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "SNPS",
+      "Recommendations": 2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "SO",
+      "Recommendations": 2.6,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "SPG",
+      "Recommendations": 2.5,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "SPGI",
+      "Recommendations": 1.7,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "SRE",
+      "Recommendations": 2.1,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "STE",
+      "Recommendations": 2,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "STT",
+      "Recommendations": 2.4,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "STX",
+      "Recommendations": 2.5,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "STZ",
+      "Recommendations": 2.1,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "SWK",
+      "Recommendations": 2.2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "SWKS",
+      "Recommendations": 2.3,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "SYF",
+      "Recommendations": 1.9,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "SYK",
+      "Recommendations": 2.2,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "SYY",
+      "Recommendations": 2.5,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "T",
+      "Recommendations": 2.9,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "TAP",
+      "Recommendations": 2.8,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "TDG",
+      "Recommendations": 2.2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "TDY",
+      "Recommendations": 1.6,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "TEL",
+      "Recommendations": 2.1,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "TER",
+      "Recommendations": 2.2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "TFC",
+      "Recommendations": 2.3,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "TFX",
+      "Recommendations": 1.6,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "TGT",
+      "Recommendations": 1.9,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "TJX",
+      "Recommendations": 1.8,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "TMO",
+      "Recommendations": 1.7,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "TMUS",
+      "Recommendations": 1.9,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "TPR",
+      "Recommendations": 2.3,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "TRMB",
+      "Recommendations": 2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "TROW",
+      "Recommendations": 3,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "TRV",
+      "Recommendations": 2.7,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "TSCO",
+      "Recommendations": 2.4,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "TSLA",
+      "Recommendations": 2.7,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "TSN",
+      "Recommendations": 2.2,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "TT",
+      "Recommendations": 2.6,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "TTWO",
+      "Recommendations": 2.2,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "TWTR",
+      "Recommendations": 2.7,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "TXN",
+      "Recommendations": 2.4,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "TXT",
+      "Recommendations": 2.5,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "TYL",
+      "Recommendations": 2.2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "UA",
+      "Recommendations": 3.5,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "UAA",
+      "Recommendations": 2.7,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "UAL",
+      "Recommendations": 2.6,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "UDR",
+      "Recommendations": 2.4,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "UHS",
+      "Recommendations": 2.4,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "ULTA",
+      "Recommendations": 2.3,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "UNH",
+      "Recommendations": 1.8,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "UNM",
+      "Recommendations": 3,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "UNP",
+      "Recommendations": 2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "UPS",
+      "Recommendations": 2.5,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "URI",
+      "Recommendations": 2.4,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "USB",
+      "Recommendations": 2.2,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "V",
+      "Recommendations": 1.8,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "VAR",
+      "Recommendations": 3.5,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "VFC",
+      "Recommendations": 2.2,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "VIAC",
+      "Recommendations": 3.1,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "VLO",
+      "Recommendations": 1.9,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "VMC",
+      "Recommendations": 2.4,
+      "Sector": "Basic Materials"
+    },
+    {
+      "Company": "VNO",
+      "Recommendations": 3,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "VRSK",
+      "Recommendations": 2.2,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "VRSN",
+      "Recommendations": 2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "VRTX",
+      "Recommendations": 1.8,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "VTR",
+      "Recommendations": 2.9,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "VTRS",
+      "Recommendations": 2.4,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "VZ",
+      "Recommendations": 2.6,
+      "Sector": "Communication Services"
+    },
+    {
+      "Company": "WAB",
+      "Recommendations": 2.3,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "WAT",
+      "Recommendations": 3.2,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "WBA",
+      "Recommendations": 3,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "WDC",
+      "Recommendations": 2.2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "WEC",
+      "Recommendations": 3.1,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "WELL",
+      "Recommendations": 2.6,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "WFC",
+      "Recommendations": 2.2,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "WHR",
+      "Recommendations": 2.7,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "WLTW",
+      "Recommendations": 2.3,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "WM",
+      "Recommendations": 2.4,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "WMB",
+      "Recommendations": 1.9,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "WMT",
+      "Recommendations": 1.9,
+      "Sector": "Consumer Defensive"
+    },
+    {
+      "Company": "WRB",
+      "Recommendations": 2.7,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "WRK",
+      "Recommendations": 2.1,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "WST",
+      "Recommendations": 2,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "WU",
+      "Recommendations": 2.9,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "WY",
+      "Recommendations": 2,
+      "Sector": "Real Estate"
+    },
+    {
+      "Company": "WYNN",
+      "Recommendations": 2.3,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "XEL",
+      "Recommendations": 2.9,
+      "Sector": "Utilities"
+    },
+    {
+      "Company": "XLNX",
+      "Recommendations": 2.8,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "XOM",
+      "Recommendations": 2.6,
+      "Sector": "Energy"
+    },
+    {
+      "Company": "XRAY",
+      "Recommendations": 2.1,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "XYL",
+      "Recommendations": 2.9,
+      "Sector": "Industrials"
+    },
+    {
+      "Company": "YUM",
+      "Recommendations": 2.5,
+      "Sector": "Consumer Cyclical"
+    },
+    {
+      "Company": "ZBH",
+      "Recommendations": 1.8,
+      "Sector": "Healthcare"
+    },
+    {
+      "Company": "ZBRA",
+      "Recommendations": 2,
+      "Sector": "Technology"
+    },
+    {
+      "Company": "ZION",
+      "Recommendations": 2.7,
+      "Sector": "Financial Services"
+    },
+    {
+      "Company": "ZTS",
+      "Recommendations": 1.9,
+      "Sector": "Healthcare"
+    }
+  ]
